@@ -36,7 +36,7 @@ readData<-function(SubjectFile,XFile,YFile,keepCol){
   activity<-read.table(YFile, header=FALSE)
   df<-cbind(activity,df)
   # Now attach the subject column to the left side
-  subject<-read.table(SubjectFile, header=FALSE)
+  subject<-read.table(SubjectFile, header=FALSE, colClasses=c("factor"))
   df<-cbind(subject,df)
   # Now make the column names human readable
   colnames(df)<-c("subject","activity",keepCol$name)
