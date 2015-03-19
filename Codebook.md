@@ -11,10 +11,10 @@ The features selected for this database come from the accelerometer and gyroscop
 ###After processing
 From the data above, the subset of data containing the mean, standard deviation (std), and mean frequency columns were extracted. The values of these columns were averaged across each test subject for each activity to arrive at the summary data presented in data_summary.txt
 
-Col Index | Col Name | Class | Description
+Col Index | Col Name | Class    | Description
 --------------------------------------------
-1 |  subject	|	integer	|An integer id for the participant performing the action  
-2 |	activityName	|character|	Text describing the activity {LAYING, SITTING, STANDING, WALKING, WALKING\_DOWNSTAIRS, WALKING\_UPSTAIRS}  
+1         |  subject  |	integer	|An integer id for the participant performing the action  
+2         |	activityName	|character|	Text describing the activity {LAYING, SITTING, STANDING, WALKING, WALKING\_DOWNSTAIRS, WALKING\_UPSTAIRS}  
 3 |	tBodyAcc\_mean\_X	|numeric|	Value between [-1,1]  
 4 |	tBodyAcc\_mean\_Y	|numeric|	Value between [-1,1]  
 5 |	tBodyAcc\_mean\_Z	|numeric|	Value between [-1,1]  
