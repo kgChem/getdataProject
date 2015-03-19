@@ -25,8 +25,10 @@ The function getActivityNames reads this file to create a dataframe describing t
 
 ## Reading The Data in sub directories
 The function readData reads the data from the files passed in and creates a data frame. SubjectFile  is the file telling the subject who performed the activity. YFile is the label for the activity that was being performed in the original numeric format XFile is the actual data values for all columns. keepCol is the df created by getCols() that specifys which columns to keep. The files XFile, YFile, and SubjectFile all need to have the relative path specified (e.g. ./test/X_test.txt).  This function should be invoked twice, once for the test data and once for the training data. The function returns the resulting data frame with the human readable column labels.
+
 ## Merging the two data frames
 The script buildData brings all the functions together. First it calls getCols() to make a data frame **dataCols** which contains the index and name of the columns to keep. Then buildData calls the readData function twice to build two data frames, **testdf** for the test data and **traindf** for the training data. These two data frames are concatenated together to make the **mergeddf** data frame. Finally, use the function getActivityNames to and use that data to add the activityName column to the mergeddf from the integers in activity column to make a more human readable format.
+
 # Averaging and Tidying the Data by subject by activity
 ##The criteria for tidy data
 1. Exactly one measured variable per column
@@ -35,5 +37,6 @@ The script buildData brings all the functions together. First it calls getCols()
 4. If multiple tables, should include column that allows them to be linked
 
 So after the script runs, we have one measured variable per column. Taking the mean values gives one observation per row per subject per activity. The data is put into one table from multiple tables at the start.
+
 ##SummarizeData
 The summarizeData function takes as an argument, the dataframe constructed by buildData(). The function then uses **group_by** from the **dplyr** package to group the data by subject and activity as requested. The function summarise each then applies the mean function to each column between tBodyAccmeanX and fBodyGyroJerkMagmeanFreq

@@ -1,7 +1,96 @@
 #Data Source
 Data were obtained from the Human Activity Recognition Using Smartphones Data Set. A full description of this data is available at [UCI Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The data were downloaded on 20015-03-14.
+
 #Data Processing
-Data were processed using the script run_analysis.R. This script is used to construct a merged data set between the training and test data keeping the selected columns listed below.
+Data were processed using the script run_analysis.R. This script is used to construct a merged data set between the training and test data keeping the selected columns listed below. See README.md for details.
+
 #Variables
-Column Index | Column Name | Data Type
----------------------------------------
+###From the original data description:
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+###After processing
+From the data above, the subset of data containing the mean, standard deviation (std), and mean frequency columns were extracted. The values of these columns were averaged across each test subject for each activity to arrive at the summary data presented in data_summary.txt
+
+Col Index | Col Name | Class | Description
+--------------------------------------------
+1 |  subject	|	integer	|An integer id for the participant performing the action
+2 |	activityName	|character|	Text describing the activity {LAYING, SITTING, STANDING, WALKING, WALKING\_DOWNSTAIRS, WALKING\_UPSTAIRS}
+3 |	tBodyAcc\_mean\_X	|numeric|	Value between [-1,1]
+4 |	tBodyAcc\_mean\_Y	|numeric|	Value between [-1,1]
+5 |	tBodyAcc\_mean\_Z	|numeric|	Value between [-1,1]
+6 |	tBodyAcc\_std\_X	|numeric|	Value between [-1,1]
+7 |	tBodyAcc\_std\_Y	|numeric|	Value between [-1,1]
+8 |	tBodyAcc\_std\_Z	|numeric|	Value between [-1,1]
+9 |	tGravityAcc\_mean\_X	|numeric|	Value between [-1,1]
+10|	tGravityAcc\_mean\_Y	|numeric|	Value between [-1,1]
+11|	tGravityAcc\_mean\_Z	|numeric|	Value between [-1,1]
+12|	tGravityAcc\_std\_X	|numeric|	Value between [-1,1]
+13|	tGravityAcc\_std\_Y	|numeric|	Value between [-1,1]
+14|	tGravityAcc\_std\_Z	|numeric|	Value between [-1,1]
+15|	tBodyAccJerk\_mean\_X	|numeric|	Value between [-1,1]
+16|	tBodyAccJerk\_mean\_Y	|numeric|	Value between [-1,1]
+17|	tBodyAccJerk\_mean\_Z	|numeric|	Value between [-1,1]
+18|	tBodyAccJerk\_std\_X	|numeric|	Value between [-1,1]
+19|	tBodyAccJerk\_std\_Y	|numeric|	Value between [-1,1]
+20|	tBodyAccJerk\_std\_Z	|numeric|	Value between [-1,1]
+21|	tBodyGyro\_mean\_X	|numeric|	Value between [-1,1]
+22|	tBodyGyro\_mean\_Y	|numeric|	Value between [-1,1]
+23|	tBodyGyro\_mean\_Z	|numeric|	Value between [-1,1]
+24|	tBodyGyro\_std\_X	|numeric|	Value between [-1,1]
+25|	tBodyGyro\_std\_Y	|numeric|	Value between [-1,1]
+26|	tBodyGyro\_std\_Z	|numeric|	Value between [-1,1]
+27|	tBodyGyroJerk\_mean\_X	|numeric|	Value between [-1,1]
+28|	tBodyGyroJerk\_mean\_Y	|numeric|	Value between [-1,1]
+29|	tBodyGyroJerk\_mean\_Z	|numeric|	Value between [-1,1]
+30|	tBodyGyroJerk\_std\_X	|numeric|	Value between [-1,1]
+31|	tBodyGyroJerk\_std\_Y	|numeric|	Value between [-1,1]
+32|	tBodyGyroJerk\_std\_Z	|numeric|	Value between [-1,1]
+33|	tBodyAccMag\_mean	|numeric|	Value between [-1,1]
+34|	tBodyAccMag\_std	|numeric|	Value between [-1,1]
+35|	tGravityAccMag\_mean	|numeric|	Value between [-1,1]
+36|	tGravityAccMag\_std	|numeric|	Value between [-1,1]
+37|	tBodyAccJerkMag\_mean	|numeric|	Value between [-1,1]
+38|	tBodyAccJerkMag\_std	|numeric|	Value between [-1,1]
+39|	tBodyGyroMag\_mean	|numeric|	Value between [-1,1]
+40|	tBodyGyroMag\_std	|numeric|	Value between [-1,1]
+41|	tBodyGyroJerkMag\_mean	|numeric|	Value between [-1,1]
+42|	tBodyGyroJerkMag\_std	|numeric|	Value between [-1,1]
+43|	fBodyAcc\_mean\_X	|numeric|	Value between [-1,1]
+44| fBodyAcc\_mean\_Y	|numeric|	Value between [-1,1]
+45|	fBodyAcc\_mean\_Z	|numeric|	Value between [-1,1]
+46|	fBodyAcc\_std\_X	|numeric|	Value between [-1,1]
+47|	fBodyAcc\_std\_Y	|numeric|	Value between [-1,1]
+48|	fBodyAcc\_std\_Z	|numeric|	Value between [-1,1]
+49|	fBodyAcc\_meanFreq\_X	|numeric|	Value between [-1,1]
+50|	fBodyAcc\_meanFreq\_Y	|numeric|	Value between [-1,1]
+51|	fBodyAcc\_meanFreq\_Z	|numeric|	Value between [-1,1]
+52|	fBodyAccJerk\_mean\_X	|numeric|	Value between [-1,1]
+53|	fBodyAccJerk\_mean\_Y	|numeric|	Value between [-1,1]
+54|	fBodyAccJerk\_mean\_Z	|numeric|	Value between [-1,1]
+55|	fBodyAccJerk\_std\_X	|numeric|	Value between [-1,1]
+56|	fBodyAccJerk\_std\_Y	|numeric|	Value between [-1,1]
+57|	fBodyAccJerk\_std\_Z	|numeric|	Value between [-1,1]
+58|	fBodyAccJerk\_meanFreq\_X	|numeric|	Value between [-1,1]
+59|	fBodyAccJerk\_meanFreq\_Y	|numeric|	Value between [-1,1]
+60|	fBodyAccJerk\_meanFreq\_Z	|numeric|	Value between [-1,1]
+61|	fBodyGyro\_mean\_X	|numeric|	Value between [-1,1]
+62|	fBodyGyro\_mean\_Y	|numeric|	Value between [-1,1]
+63|	fBodyGyro\_mean\_Z	|numeric|	Value between [-1,1]
+64|	fBodyGyro\_std\_X	|numeric|	Value between [-1,1]
+65|	fBodyGyro\_std\_Y	|numeric|	Value between [-1,1]
+66|	fBodyGyro\_std\_Z	|numeric|	Value between [-1,1]
+67|	fBodyGyro\_meanFreq\_X	|numeric|	Value between [-1,1]
+68|	fBodyGyro\_meanFreq\_Y	|numeric|	Value between [-1,1]
+69|	fBodyGyro\_meanFreq\_Z	|numeric|	Value between [-1,1]
+70|	fBodyAccMag\_mean	|numeric|	Value between [-1,1]
+71|	fBodyAccMag\_std	|numeric|	Value between [-1,1]
+72|	fBodyAccMag\_meanFreq	|numeric|	Value between [-1,1]
+73|	fBodyAccJerkMag\_mean	|numeric|	Value between [-1,1]
+74|	fBodyAccJerkMag\_std	|numeric|	Value between [-1,1]
+75|	fBodyAccJerkMag\_meanFreq	|numeric|	Value between [-1,1]
+76|	fBodyGyroMag\_mean	|numeric|	Value between [-1,1]
+77|	fBodyGyroMag\_std	|numeric|	Value between [-1,1]
+78|	fBodyGyroMag\_meanFreq	|numeric|	Value between [-1,1]
+79|	fBodyGyroJerkMag\_mean	|numeric|	Value between [-1,1]
+80|	fBodyGyroJerkMag\_std	|numeric|	Value between [-1,1]
+81|	fBodyGyroJerkMag\_meanFreq	|numeric|	Value between [-1,1]
