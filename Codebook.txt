@@ -1,0 +1,104 @@
+Data Source
+-------------
+Data were obtained from the Human Activity Recognition Using Smartphones Data Set. A full description of this data is available at [UCI Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The data were downloaded on 20015-03-14.
+
+Data Processing
+---------------
+Data were processed using the script run_analysis.R. This script is used to construct a merged data set between the training and test data keeping the selected columns listed below. See README.md for details.
+
+Variables
+-------------------------------------
+From the original data description:
+-------------------------------------
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+-------------------
+After processing
+-------------------
+From the data above, the subset of data containing the mean, standard deviation (std), and mean frequency columns were extracted. The values of these columns were averaged across each test subject for each activity to arrive at the summary data presented in data_summary.txt
+
+-----------------------------------------------------------------------------------------
+Column Index  ColumnName	Type	Description
+-----------------------------------------------------------------------------------------
+1	subject	integer	An integer id for the participant performing the action
+2	activityName	character	Text describing the activity {LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS}
+3	tBodyAcc_mean_X	numeric	Value between [-1,1]
+4	tBodyAcc_mean_Y	numeric	Value between [-1,1]
+5	tBodyAcc_mean_Z	numeric	Value between [-1,1]
+6	tBodyAcc_std_X	numeric	Value between [-1,1]
+7	tBodyAcc_std_Y	numeric	Value between [-1,1]
+8	tBodyAcc_std_Z	numeric	Value between [-1,1]
+9	tGravityAcc_mean_X	numeric	Value between [-1,1]
+10	tGravityAcc_mean_Y	numeric	Value between [-1,1]
+11	tGravityAcc_mean_Z	numeric	Value between [-1,1]
+12	tGravityAcc_std_X	numeric	Value between [-1,1]
+13	tGravityAcc_std_Y	numeric	Value between [-1,1]
+14	tGravityAcc_std_Z	numeric	Value between [-1,1]
+15	tBodyAccJerk_mean_X	numeric	Value between [-1,1]
+16	tBodyAccJerk_mean_Y	numeric	Value between [-1,1]
+17	tBodyAccJerk_mean_Z	numeric	Value between [-1,1]
+18	tBodyAccJerk_std_X	numeric	Value between [-1,1]
+19	tBodyAccJerk_std_Y	numeric	Value between [-1,1]
+20	tBodyAccJerk_std_Z	numeric	Value between [-1,1]
+21	tBodyGyro_mean_X	numeric	Value between [-1,1]
+22	tBodyGyro_mean_Y	numeric	Value between [-1,1]
+23	tBodyGyro_mean_Z	numeric	Value between [-1,1]
+24	tBodyGyro_std_X	numeric	Value between [-1,1]
+25	tBodyGyro_std_Y	numeric	Value between [-1,1]
+26	tBodyGyro_std_Z	numeric	Value between [-1,1]
+27	tBodyGyroJerk_mean_X	numeric	Value between [-1,1]
+28	tBodyGyroJerk_mean_Y	numeric	Value between [-1,1]
+29	tBodyGyroJerk_mean_Z	numeric	Value between [-1,1]
+30	tBodyGyroJerk_std_X	numeric	Value between [-1,1]
+31	tBodyGyroJerk_std_Y	numeric	Value between [-1,1]
+32	tBodyGyroJerk_std_Z	numeric	Value between [-1,1]
+33	tBodyAccMag_mean	numeric	Value between [-1,1]
+34	tBodyAccMag_std	numeric	Value between [-1,1]
+35	tGravityAccMag_mean	numeric	Value between [-1,1]
+36	tGravityAccMag_std	numeric	Value between [-1,1]
+37	tBodyAccJerkMag_mean	numeric	Value between [-1,1]
+38	tBodyAccJerkMag_std	numeric	Value between [-1,1]
+39	tBodyGyroMag_mean	numeric	Value between [-1,1]
+40	tBodyGyroMag_std	numeric	Value between [-1,1]
+41	tBodyGyroJerkMag_mean	numeric	Value between [-1,1]
+42	tBodyGyroJerkMag_std	numeric	Value between [-1,1]
+43	fBodyAcc_mean_X	numeric	Value between [-1,1]
+44	fBodyAcc_mean_Y	numeric	Value between [-1,1]
+45	fBodyAcc_mean_Z	numeric	Value between [-1,1]
+46	fBodyAcc_std_X	numeric	Value between [-1,1]
+47	fBodyAcc_std_Y	numeric	Value between [-1,1]
+48	fBodyAcc_std_Z	numeric	Value between [-1,1]
+49	fBodyAcc_meanFreq_X	numeric	Value between [-1,1]
+50	fBodyAcc_meanFreq_Y	numeric	Value between [-1,1]
+51	fBodyAcc_meanFreq_Z	numeric	Value between [-1,1]
+52	fBodyAccJerk_mean_X	numeric	Value between [-1,1]
+53	fBodyAccJerk_mean_Y	numeric	Value between [-1,1]
+54	fBodyAccJerk_mean_Z	numeric	Value between [-1,1]
+55	fBodyAccJerk_std_X	numeric	Value between [-1,1]
+56	fBodyAccJerk_std_Y	numeric	Value between [-1,1]
+57	fBodyAccJerk_std_Z	numeric	Value between [-1,1]
+58	fBodyAccJerk_meanFreq_X	numeric	Value between [-1,1]
+59	fBodyAccJerk_meanFreq_Y	numeric	Value between [-1,1]
+60	fBodyAccJerk_meanFreq_Z	numeric	Value between [-1,1]
+61	fBodyGyro_mean_X	numeric	Value between [-1,1]
+62	fBodyGyro_mean_Y	numeric	Value between [-1,1]
+63	fBodyGyro_mean_Z	numeric	Value between [-1,1]
+64	fBodyGyro_std_X	numeric	Value between [-1,1]
+65	fBodyGyro_std_Y	numeric	Value between [-1,1]
+66	fBodyGyro_std_Z	numeric	Value between [-1,1]
+67	fBodyGyro_meanFreq_X	numeric	Value between [-1,1]
+68	fBodyGyro_meanFreq_Y	numeric	Value between [-1,1]
+69	fBodyGyro_meanFreq_Z	numeric	Value between [-1,1]
+70	fBodyAccMag_mean	numeric	Value between [-1,1]
+71	fBodyAccMag_std	numeric	Value between [-1,1]
+72	fBodyAccMag_meanFreq	numeric	Value between [-1,1]
+73	fBodyAccJerkMag_mean	numeric	Value between [-1,1]
+74	fBodyAccJerkMag_std	numeric	Value between [-1,1]
+75	fBodyAccJerkMag_meanFreq	numeric	Value between [-1,1]
+76	fBodyGyroMag_mean	numeric	Value between [-1,1]
+77	fBodyGyroMag_std	numeric	Value between [-1,1]
+78	fBodyGyroMag_meanFreq	numeric	Value between [-1,1]
+79	fBodyGyroJerkMag_mean	numeric	Value between [-1,1]
+80	fBodyGyroJerkMag_std	numeric	Value between [-1,1]
+81	fBodyGyroJerkMag_meanFreq	numeric	Value between [-1,1]
+
